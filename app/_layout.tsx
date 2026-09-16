@@ -1,15 +1,15 @@
-import "../global.css";
-import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { useTheme } from "@lib/useTheme";
+import '../global.css';
+import { useTheme } from '@lib/useTheme';
+import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 export default function RootLayout() {
-  const { isDark } = useTheme();
+    const { isDark } = useTheme();
 
-  return (
-    <>
-      <StatusBar style={isDark ? "light" : "dark"} />
-      <Stack screenOptions={{ headerShown: false }} />
-    </>
-  );
+    return (
+        <>
+            <StatusBar style={isDark ? 'light' : 'dark'} />
+            <Stack screenOptions={{ headerShown: false }} />
+        </>
+    );
 }
