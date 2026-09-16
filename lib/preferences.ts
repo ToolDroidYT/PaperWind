@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const KEYS = {
   THEME: "@materialwind/theme",
+  MONET: "@materialwind/monet",
   NOTIFICATIONS: "@materialwind/notifications",
   ONBOARDING_COMPLETE: "@materialwind/onboarding",
   LANGUAGE: "@materialwind/language",
@@ -14,6 +15,15 @@ export const Preferences = {
 
   setTheme: async (theme: string): Promise<void> => {
     await AsyncStorage.setItem(KEYS.THEME, theme);
+  },
+
+  getMonet: async (): Promise<boolean> => {
+    const val = await AsyncStorage.getItem(KEYS.MONET);
+    return val === "true";
+  },
+
+  setMonet: async (enabled: boolean): Promise<void> => {
+    await AsyncStorage.setItem(KEYS.MONET, JSON.stringify(enabled));
   },
 
   getNotifications: async (): Promise<boolean> => {

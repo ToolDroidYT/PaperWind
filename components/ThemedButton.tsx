@@ -12,27 +12,26 @@ export function ThemedButton({
   onPress,
   variant = "primary",
 }: ThemedButtonProps) {
-  const { isDark } = useTheme();
+  const { colors } = useTheme();
+
+  const isPrimary = variant === "primary";
 
   return (
     <Pressable
       onPress={onPress}
-      className={`rounded-xl px-6 py-3 ${
-        variant === "primary"
-          ? "bg-blue-500 active:bg-blue-600"
-          : isDark
-            ? "bg-gray-700 active:bg-gray-600"
-            : "bg-gray-200 active:bg-gray-300"
-      }`}
+      style={{
+        backgroundColor: isPrimary ? colors.primary : colors.secondaryContainer,
+        borderRadius: 12,
+        paddingHorizontal: 24,
+        paddingVertical: 12,
+      }}
     >
       <Text
-        className={`text-center font-semibold ${
-          variant === "primary"
-            ? "text-white"
-            : isDark
-              ? "text-gray-200"
-              : "text-gray-800"
-        }`}
+        style={{
+          color: isPrimary ? colors.onPrimary : colors.onSecondaryContainer,
+          fontWeight: "600",
+          textAlign: "center",
+        }}
       >
         {title}
       </Text>

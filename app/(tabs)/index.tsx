@@ -4,53 +4,29 @@ import { ThemedCard } from "@components/ThemedCard";
 import { ThemedButton } from "@components/ThemedButton";
 
 export default function HomeScreen() {
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark, colors, toggleTheme } = useTheme();
 
   return (
-    <View
-      className={`flex-1 items-center justify-center p-6 ${
-        isDark ? "bg-gray-900" : "bg-white"
-      }`}
-    >
-      <Text
-        className={`text-3xl font-bold ${
-          isDark ? "text-white" : "text-gray-900"
-        }`}
-      >
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 24, backgroundColor: colors.background }}>
+      <Text style={{ fontSize: 30, fontWeight: "bold", color: colors.onBackground }}>
         MaterialWind
       </Text>
-      <Text
-        className={`mt-2 text-base ${
-          isDark ? "text-gray-400" : "text-gray-600"
-        }`}
-      >
+      <Text style={{ marginTop: 8, fontSize: 16, color: colors.onSurfaceVariant }}>
         React Native + NativeWind + Expo
       </Text>
 
-      <ThemedCard className="mt-8 w-full max-w-sm">
-        <Text
-          className={`text-center text-lg font-semibold ${
-            isDark ? "text-white" : "text-gray-900"
-          }`}
-        >
+      <ThemedCard style={{ marginTop: 32, width: "100%", maxWidth: 380 }}>
+        <Text style={{ textAlign: "center", fontSize: 18, fontWeight: "600", color: colors.onSurface }}>
           Welcome to your new project
         </Text>
-        <Text
-          className={`mt-2 text-center text-sm ${
-            isDark ? "text-gray-400" : "text-gray-500"
-          }`}
-        >
+        <Text style={{ marginTop: 8, textAlign: "center", fontSize: 14, color: colors.onSurfaceVariant }}>
           Edit app/(tabs)/index.tsx to get started
         </Text>
       </ThemedCard>
 
-      <View className="mt-8 flex-row gap-4">
+      <View style={{ marginTop: 32, flexDirection: "row", gap: 16 }}>
         <ThemedButton title="Toggle Theme" onPress={toggleTheme} />
-        <ThemedButton
-          title="Secondary"
-          onPress={() => {}}
-          variant="secondary"
-        />
+        <ThemedButton title="Secondary" onPress={() => {}} variant="secondary" />
       </View>
     </View>
   );

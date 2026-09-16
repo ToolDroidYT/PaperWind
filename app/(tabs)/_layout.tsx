@@ -2,20 +2,21 @@ import { Tabs } from "expo-router";
 import { useTheme } from "@lib/useTheme";
 
 export default function TabLayout() {
-  const { isDark } = useTheme();
+  const { colors } = useTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: isDark ? "#60a5fa" : "#3b82f6",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.onSurfaceVariant,
         tabBarStyle: {
-          backgroundColor: isDark ? "#111827" : "#ffffff",
-          borderTopColor: isDark ? "#374151" : "#e5e7eb",
+          backgroundColor: colors.surfaceContainer,
+          borderTopColor: colors.outlineVariant,
         },
         headerStyle: {
-          backgroundColor: isDark ? "#111827" : "#ffffff",
+          backgroundColor: colors.surface,
         },
-        headerTintColor: isDark ? "#f9fafb" : "#111827",
+        headerTintColor: colors.onSurface,
       }}
     >
       <Tabs.Screen

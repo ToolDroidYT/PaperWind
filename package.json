@@ -11,9 +11,16 @@
     "lint": "expo lint",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["react-native", "nativewind", "expo", "tailwindcss", "typescript"],
+  "keywords": [
+    "react-native",
+    "nativewind",
+    "expo",
+    "tailwindcss",
+    "typescript"
+  ],
   "type": "commonjs",
   "dependencies": {
+    "@expo/ui": "~57.0.18",
     "@react-native-async-storage/async-storage": "^3.1.1",
     "expo": "^57.0.23",
     "expo-constants": "^57.0.18",
@@ -30,7 +37,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
-    "@expo/metro-config": "^0.22.0",
+    "@expo/metro-config": "~57.0.0",
     "@types/react": "~19.0.0",
     "babel-preset-expo": "~13.0.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
