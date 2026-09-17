@@ -2,7 +2,7 @@ import { ThemedCard } from '@components/ThemedCard';
 import { isMonetAvailable } from '@lib/monet';
 import { useTheme } from '@lib/useTheme';
 import { Check, Info, Palette, Phone } from 'lucide-react-native';
-import { Platform, Pressable, Text, View } from 'react-native';
+import { Platform, Pressable, ScrollView, Text, View } from 'react-native';
 
 const THEMES = ['light', 'dark', 'system'] as const;
 
@@ -12,12 +12,10 @@ export default function SettingsScreen() {
     const monetSupported = Platform.OS === 'android' && isMonetAvailable();
 
     return (
-        <View
-            style={{
-                flex: 1,
-                padding: 24,
-                backgroundColor: colors.background,
-            }}>
+        <ScrollView
+            style={{ flex: 1, backgroundColor: colors.background }}
+            contentContainerStyle={{ padding: 24 }}
+            showsVerticalScrollIndicator={false}>
             <Text
                 style={{
                     fontSize: 24,
@@ -237,6 +235,6 @@ export default function SettingsScreen() {
                     React Native + NativeWind + Expo Go
                 </Text>
             </ThemedCard>
-        </View>
+        </ScrollView>
     );
 }
