@@ -1,3 +1,4 @@
+import { Switch } from '@/components/Switch';
 import { ThemedCard } from '@/components/ThemedCard';
 import { isMonetAvailable } from '@/lib/monet';
 import { useTheme } from '@/lib/useTheme';
@@ -107,8 +108,7 @@ export default function SettingsScreen() {
             </View>
 
             <ThemedCard>
-                <Pressable
-                    onPress={monetSupported ? toggleMonet : undefined}
+                <View
                     style={{
                         flexDirection: 'row',
                         alignItems: 'center',
@@ -137,34 +137,12 @@ export default function SettingsScreen() {
                         </Text>
                     </View>
 
-                    {/* Toggle Switch */}
-                    <Pressable
-                        onPress={monetSupported ? toggleMonet : undefined}
-                        style={{
-                            width: 51,
-                            height: 31,
-                            borderRadius: 16,
-                            padding: 2,
-                            backgroundColor:
-                                useMonet ?
-                                    colors.primary
-                                :   colors.surfaceVariant,
-                            justifyContent: 'center',
-                        }}>
-                        <View
-                            style={{
-                                width: 27,
-                                height: 27,
-                                borderRadius: 14,
-                                backgroundColor:
-                                    useMonet ?
-                                        colors.onPrimary
-                                    :   colors.outline,
-                                marginLeft: useMonet ? 22 : 0,
-                            }}
-                        />
-                    </Pressable>
-                </Pressable>
+                    <Switch
+                        checked={useMonet}
+                        onValueChange={monetSupported ? toggleMonet : () => {}}
+                        disabled={!monetSupported}
+                    />
+                </View>
 
                 {/* Color Preview Swatches */}
                 <View style={{ flexDirection: 'row', marginTop: 16, gap: 8 }}>

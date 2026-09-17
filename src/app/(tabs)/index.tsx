@@ -1,11 +1,15 @@
-import { ThemedButton } from '@/components/ThemedButton';
+import { Button } from '@/components/Button';
+import { Switch } from '@/components/Switch';
 import { ThemedCard } from '@/components/ThemedCard';
 import { useTheme } from '@/lib/useTheme';
 import { Sparkles, Wind } from 'lucide-react-native';
+import { useState } from 'react';
 import { Text, View } from 'react-native';
 
 export default function HomeScreen() {
     const { colors, toggleTheme } = useTheme();
+    const [notifications, setNotifications] = useState(true);
+    const [selectedChip, setSelectedChip] = useState<'all' | 'unread'>('all');
 
     return (
         <View
@@ -71,14 +75,54 @@ export default function HomeScreen() {
                 </Text>
             </ThemedCard>
 
-            <View style={{ marginTop: 32, flexDirection: 'row', gap: 16 }}>
-                <ThemedButton title='Toggle Theme' onPress={toggleTheme} />
-                <ThemedButton
-                    title='Secondary'
-                    onPress={() => {}}
-                    variant='secondary'
+            {/* Buttons */}
+            <ThemedCard style={{ marginTop: 24, width: '100%', maxWidth: 380 }}>
+                <Text
+                    style={{
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: colors.onSurfaceVariant,
+                        marginBottom: 12,
+                    }}>
+                    Buttons
+                </Text>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+                    <Button title='Filled' onPress={toggleTheme} />
+                    <Button
+                        title='Outlined'
+                        variant='outlined'
+                        onPress={toggleTheme}
+                    />
+                    <Button
+                        title='Text'
+                        variant='text'
+                        onPress={toggleTheme}
+                    />
+                    <Button
+                        title='Disabled'
+                        disabled
+                        onPress={() => {}}
+                    />
+                </View>
+            </ThemedCard>
+
+            {/* Switch */}
+            <ThemedCard style={{ marginTop: 16, width: '100%', maxWidth: 380 }}>
+                <Text
+                    style={{
+                        fontSize: 14,
+                        fontWeight: '600',
+                        color: colors.onSurfaceVariant,
+                        marginBottom: 12,
+                    }}>
+                    Switches
+                </Text>
+                <Switch
+                    checked={notifications}
+                    onValueChange={setNotifications}
+                    label='Notifications'
                 />
-            </View>
+            </ThemedCard>
         </View>
     );
 }
