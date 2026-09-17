@@ -8,7 +8,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint",
+    "format": "oxlint --fix && prettier --write \"**/*.{html,css,js,jsx,ts,tsx,md,json}\"",
+    "lint": "oxlint",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
@@ -49,8 +50,9 @@
     "babel-preset-expo": "~57.0.0",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~57.0.2",
-    "prettier": "^3.9.7",
-    "prettier-plugin-tailwindcss": "^0.5.11",
+    "oxlint": "^1.76.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^3.4.17",
     "typescript": "~6.0.3"
   }
