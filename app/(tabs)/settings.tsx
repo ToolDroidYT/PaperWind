@@ -1,6 +1,7 @@
 import { ThemedCard } from '@components/ThemedCard';
 import { isMonetAvailable } from '@lib/monet';
 import { useTheme } from '@lib/useTheme';
+import { Check, Info, Palette, Phone } from 'lucide-react-native';
 import { Platform, Pressable, Text, View } from 'react-native';
 
 const THEMES = ['light', 'dark', 'system'] as const;
@@ -28,17 +29,25 @@ export default function SettingsScreen() {
             </Text>
 
             {/* Appearance Section */}
-            <Text
+            <View
                 style={{
-                    fontSize: 12,
-                    fontWeight: '600',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 8,
                     marginBottom: 12,
-                    color: colors.onSurfaceVariant,
-                    letterSpacing: 1,
-                    textTransform: 'uppercase',
                 }}>
-                Appearance
-            </Text>
+                <Palette size={16} stroke={colors.onSurfaceVariant} />
+                <Text
+                    style={{
+                        fontSize: 12,
+                        fontWeight: '600',
+                        color: colors.onSurfaceVariant,
+                        letterSpacing: 1,
+                        textTransform: 'uppercase',
+                    }}>
+                    Appearance
+                </Text>
+            </View>
 
             {THEMES.map((t) => {
                 const isActive = mode === t;
@@ -71,31 +80,33 @@ export default function SettingsScreen() {
                             {t} Mode
                         </Text>
                         {isActive && (
-                            <Text
-                                style={{
-                                    color: colors.onPrimary,
-                                    fontSize: 18,
-                                }}>
-                                &#10003;
-                            </Text>
+                            <Check size={20} stroke={colors.onPrimary} />
                         )}
                     </Pressable>
                 );
             })}
 
             {/* Material You Section */}
-            <Text
+            <View
                 style={{
-                    fontSize: 12,
-                    fontWeight: '600',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 8,
                     marginTop: 24,
                     marginBottom: 12,
-                    color: colors.onSurfaceVariant,
-                    letterSpacing: 1,
-                    textTransform: 'uppercase',
                 }}>
-                Material You
-            </Text>
+                <Phone size={16} stroke={colors.onSurfaceVariant} />
+                <Text
+                    style={{
+                        fontSize: 12,
+                        fontWeight: '600',
+                        color: colors.onSurfaceVariant,
+                        letterSpacing: 1,
+                        textTransform: 'uppercase',
+                    }}>
+                    Material You
+                </Text>
+            </View>
 
             <ThemedCard>
                 <Pressable
@@ -192,18 +203,26 @@ export default function SettingsScreen() {
             </ThemedCard>
 
             {/* About Section */}
-            <Text
+            <View
                 style={{
-                    fontSize: 12,
-                    fontWeight: '600',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 8,
                     marginTop: 24,
                     marginBottom: 12,
-                    color: colors.onSurfaceVariant,
-                    letterSpacing: 1,
-                    textTransform: 'uppercase',
                 }}>
-                About
-            </Text>
+                <Info size={16} stroke={colors.onSurfaceVariant} />
+                <Text
+                    style={{
+                        fontSize: 12,
+                        fontWeight: '600',
+                        color: colors.onSurfaceVariant,
+                        letterSpacing: 1,
+                        textTransform: 'uppercase',
+                    }}>
+                    About
+                </Text>
+            </View>
 
             <ThemedCard>
                 <Text style={{ fontSize: 16, color: colors.onSurface }}>

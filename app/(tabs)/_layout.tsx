@@ -1,5 +1,6 @@
 import { useTheme } from '@lib/useTheme';
 import { Tabs } from 'expo-router';
+import { Home, Settings } from 'lucide-react-native';
 
 export default function TabLayout() {
     const { colors } = useTheme();
@@ -23,6 +24,9 @@ export default function TabLayout() {
                 options={{
                     title: 'Home',
                     tabBarLabel: 'Home',
+                    tabBarIcon: ({ color, size }) => (
+                        <Home size={size} stroke={color} />
+                    ),
                 }}
             />
             <Tabs.Screen
@@ -30,6 +34,9 @@ export default function TabLayout() {
                 options={{
                     title: 'Settings',
                     tabBarLabel: 'Settings',
+                    tabBarIcon: ({ color, size }) => (
+                        <Settings size={size} stroke={color} />
+                    ),
                 }}
             />
         </Tabs>

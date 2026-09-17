@@ -1,10 +1,11 @@
 import { ThemedButton } from '@components/ThemedButton';
 import { ThemedCard } from '@components/ThemedCard';
 import { useTheme } from '@lib/useTheme';
+import { Sparkles, Wind } from 'lucide-react-native';
 import { Text, View } from 'react-native';
 
 export default function HomeScreen() {
-    const { isDark, colors, toggleTheme } = useTheme();
+    const { colors, toggleTheme } = useTheme();
 
     return (
         <View
@@ -15,14 +16,23 @@ export default function HomeScreen() {
                 padding: 24,
                 backgroundColor: colors.background,
             }}>
-            <Text
+            <View
                 style={{
-                    fontSize: 30,
-                    fontWeight: 'bold',
-                    color: colors.onBackground,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 12,
                 }}>
-                MaterialWind
-            </Text>
+                <Wind size={36} stroke={colors.primary} />
+                <Text
+                    style={{
+                        fontSize: 30,
+                        fontWeight: 'bold',
+                        color: colors.onBackground,
+                    }}>
+                    MaterialWind
+                </Text>
+            </View>
+
             <Text
                 style={{
                     marginTop: 8,
@@ -33,15 +43,23 @@ export default function HomeScreen() {
             </Text>
 
             <ThemedCard style={{ marginTop: 32, width: '100%', maxWidth: 380 }}>
-                <Text
+                <View
                     style={{
-                        textAlign: 'center',
-                        fontSize: 18,
-                        fontWeight: '600',
-                        color: colors.onSurface,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 8,
                     }}>
-                    Welcome to your new project
-                </Text>
+                    <Sparkles size={20} stroke={colors.primary} />
+                    <Text
+                        style={{
+                            fontSize: 18,
+                            fontWeight: '600',
+                            color: colors.onSurface,
+                        }}>
+                        Welcome to your new project
+                    </Text>
+                </View>
                 <Text
                     style={{
                         marginTop: 8,
