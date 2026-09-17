@@ -54,6 +54,6 @@ export const Preferences = {
     },
 
     clearAll: async (): Promise<void> => {
-        await AsyncStorage.removeMany(Object.values(KEYS));
+        await AsyncStorage.multiRemove(Object.values(KEYS));
     },
 };
