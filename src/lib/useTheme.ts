@@ -1,6 +1,6 @@
 import { type MaterialColors } from '@expo/ui/jetpack-compose';
-import { useThemeStore } from '@/store/theme-store';
 import { useColorScheme } from 'nativewind';
+import { useThemeStore } from '@/store/theme-store';
 import { getMonetColors } from './monet';
 import { DEFAULT_DARK_COLORS, DEFAULT_LIGHT_COLORS } from './themes';
 

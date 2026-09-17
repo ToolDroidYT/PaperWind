@@ -1,8 +1,8 @@
-import { isMonetAvailable } from '@/lib/monet';
-import { useTheme } from '@/lib/useTheme';
 import { Check, Info, Palette, Phone } from 'lucide-react-native';
 import { Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { Card, Switch } from 'react-native-paper';
+import { isMonetAvailable } from '@/lib/monet';
+import { useTheme } from '@/lib/useTheme';
 
 const THEMES = ['light', 'dark', 'system'] as const;
 
@@ -129,18 +129,24 @@ export default function SettingsScreen() {
 
                         <Switch
                             value={useMonet}
-                            onValueChange={monetSupported ? toggleMonet : () => {}}
+                            onValueChange={
+                                monetSupported ? toggleMonet : () => {}
+                            }
                             disabled={!monetSupported}
                         />
                     </View>
 
                     {/* Color Preview Swatches */}
-                    <View style={{ flexDirection: 'row', marginTop: 16, gap: 8 }}>
+                    <View
+                        style={{ flexDirection: 'row', marginTop: 16, gap: 8 }}>
                         {[
                             { label: 'Primary', color: colors.primary },
                             { label: 'Secondary', color: colors.secondary },
                             { label: 'Tertiary', color: colors.tertiary },
-                            { label: 'Surface', color: colors.surfaceContainer },
+                            {
+                                label: 'Surface',
+                                color: colors.surfaceContainer,
+                            },
                         ].map(({ label, color: c }) => (
                             <View
                                 key={label}

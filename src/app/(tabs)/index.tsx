@@ -1,12 +1,8 @@
-import { useTheme } from '@/lib/useTheme';
-import { Sparkles, Wind } from 'lucide-react-native';
 import { useState } from 'react';
+import { Sparkles, Wind } from 'lucide-react-native';
 import { Text, View } from 'react-native';
-import {
-    Button,
-    Card,
-    Switch,
-} from 'react-native-paper';
+import { Button, Card, Switch } from 'react-native-paper';
+import { useTheme } from '@/lib/useTheme';
 
 export default function HomeScreen() {
     const { colors, toggleTheme } = useTheme();
@@ -89,7 +85,12 @@ export default function HomeScreen() {
                         }}>
                         Buttons
                     </Text>
-                    <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+                    <View
+                        style={{
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            gap: 12,
+                        }}>
                         <Button mode='contained' onPress={toggleTheme}>
                             Filled
                         </Button>

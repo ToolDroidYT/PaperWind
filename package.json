@@ -9,7 +9,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "format": "oxlint --fix && prettier --write \"**/*.{html,css,js,jsx,ts,tsx,md,json}\"",
-    "lint": "oxlint",
+    "lint": "oxlint && expo lint",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [

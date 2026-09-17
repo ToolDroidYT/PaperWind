@@ -15,14 +15,14 @@ Update `MEMORY.md` with any new facts or instructions that should persist across
 
 ## Commands
 
-| Command             | What                                |
-| ------------------- | ----------------------------------- |
-| `npm start`         | Expo dev server                     |
-| `npm run android`   | Start on Android emulator           |
-| `npm run ios`       | Start on iOS simulator              |
-| `npm run web`       | Start on web (Metro bundler)        |
-| `npm run lint`      | `expo lint`                         |
-| `npm run typecheck` | `tsc --noEmit`                      |
+| Command             | What                         |
+| ------------------- | ---------------------------- |
+| `npm start`         | Expo dev server              |
+| `npm run android`   | Start on Android emulator    |
+| `npm run ios`       | Start on iOS simulator       |
+| `npm run web`       | Start on web (Metro bundler) |
+| `npm run lint`      | `expo lint`                  |
+| `npm run typecheck` | `tsc --noEmit`               |
 
 No test framework is installed. Verify changes via `lint` then `typecheck` only.
 

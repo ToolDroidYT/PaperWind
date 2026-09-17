@@ -1,6 +1,6 @@
-import { useTheme } from '@/lib/useTheme';
 import { Tabs } from 'expo-router';
 import { Home, Settings } from 'lucide-react-native';
+import { useTheme } from '@/lib/useTheme';
 
 export default function TabLayout() {
     const { colors } = useTheme();

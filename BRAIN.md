@@ -53,12 +53,12 @@ The app uses `@expo/ui/jetpack-compose` to generate a full Material 3 color sche
 
 ### Color source resolution
 
-| Requested | Platform       | Resolved source | Palette from          |
-| --------- | -------------- | --------------- | --------------------- |
-| Monet ON  | Android 12+    | dynamic         | System wallpaper      |
-| Monet ON  | Android <12    | seed            | Blue seed (#2563EB)   |
-| Monet ON  | iOS / Web      | seed            | Blue seed (#2563EB)   |
-| Monet OFF | any            | default         | Static palettes       |
+| Requested | Platform    | Resolved source | Palette from        |
+| --------- | ----------- | --------------- | ------------------- |
+| Monet ON  | Android 12+ | dynamic         | System wallpaper    |
+| Monet ON  | Android <12 | seed            | Blue seed (#2563EB) |
+| Monet ON  | iOS / Web   | seed            | Blue seed (#2563EB) |
+| Monet OFF | any         | default         | Static palettes     |
 
 ### Theme modes
 
@@ -74,15 +74,15 @@ Theme preferences (`mode`, `useMonet`) are defined in `src/lib/preferences.ts` v
 
 ```ts
 const {
-    colorScheme,    // 'light' | 'dark' (resolved from NativeWind)
-    isDark,         // boolean
-    mode,           // 'light' | 'dark' | 'system'
-    setTheme,       // (mode) => void
-    toggleTheme,    // () => void — toggles light/dark
-    useMonet,       // boolean
-    toggleMonet,    // () => void
-    setMonet,       // (enabled: boolean) => void
-    colors,         // MaterialColors — active palette (default or Monet-derived)
+    colorScheme, // 'light' | 'dark' (resolved from NativeWind)
+    isDark, // boolean
+    mode, // 'light' | 'dark' | 'system'
+    setTheme, // (mode) => void
+    toggleTheme, // () => void — toggles light/dark
+    useMonet, // boolean
+    toggleMonet, // () => void
+    setMonet, // (enabled: boolean) => void
+    colors, // MaterialColors — active palette (default or Monet-derived)
 } = useTheme();
 ```
 

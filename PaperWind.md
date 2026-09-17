@@ -64,24 +64,24 @@ PaperWind/
 ### useTheme() Hook
 
 ```tsx
-import { useTheme } from "@lib/useTheme";
+import { useTheme } from '@lib/useTheme';
 
 function MyComponent() {
-  const {
-    colors,        // MaterialColors — active palette (default or Monet)
-    isDark,        // boolean
-    mode,          // "light" | "dark" | "system"
-    setTheme,      // (mode) => void
-    toggleTheme,   // () => void
-    useMonet,      // boolean
-    toggleMonet,   // () => void
-  } = useTheme();
+    const {
+        colors, // MaterialColors — active palette (default or Monet)
+        isDark, // boolean
+        mode, // "light" | "dark" | "system"
+        setTheme, // (mode) => void
+        toggleTheme, // () => void
+        useMonet, // boolean
+        toggleMonet, // () => void
+    } = useTheme();
 
-  return (
-    <View style={{ backgroundColor: colors.background }}>
-      <Text style={{ color: colors.onBackground }}>Hello</Text>
-    </View>
-  );
+    return (
+        <View style={{ backgroundColor: colors.background }}>
+            <Text style={{ color: colors.onBackground }}>Hello</Text>
+        </View>
+    );
 }
 ```
 
@@ -98,29 +98,29 @@ const { useMonet, toggleMonet } = useTheme();
 
 When Monet is OFF, the app uses a blue seed (#2563EB) Material 3 palette:
 
-| Role | Light | Dark |
-|------|-------|------|
-| Primary | `#2563EB` | `#B3C5FF` |
-| Secondary | `#565E71` | `#BEC6DC` |
-| Tertiary | `#705574` | `#D8BBDE` |
-| Surface | `#FEFBFF` | `#131316` |
+| Role       | Light     | Dark      |
+| ---------- | --------- | --------- |
+| Primary    | `#2563EB` | `#B3C5FF` |
+| Secondary  | `#565E71` | `#BEC6DC` |
+| Tertiary   | `#705574` | `#D8BBDE` |
+| Surface    | `#FEFBFF` | `#131316` |
 | Background | `#FEFBFF` | `#131316` |
 
 ### Preferences Helper
 
 ```tsx
-import { Preferences } from "@lib/preferences";
+import { Preferences } from '@lib/preferences';
 
 await Preferences.setMonet(true);
 const monet = await Preferences.getMonet();
 
-await Preferences.setTheme("dark");
+await Preferences.setTheme('dark');
 const theme = await Preferences.getTheme();
 ```
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start Expo dev server |
+| Command             | Description                  |
+| ------------------- | ---------------------------- |
+| `npm start`         | Start Expo dev server        |
 | `npm run typecheck` | Run TypeScript type checking |

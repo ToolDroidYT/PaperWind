@@ -21,13 +21,13 @@ npm start
 
 ## Scripts
 
-| Command           | Description               |
-| ----------------- | ------------------------- |
-| `npm start`       | Expo dev server           |
-| `npm run android` | Start on Android          |
-| `npm run ios`     | Start on iOS              |
-| `npm run web`     | Start on web              |
-| `npm run lint`    | Lint                      |
+| Command             | Description              |
+| ------------------- | ------------------------ |
+| `npm start`         | Expo dev server          |
+| `npm run android`   | Start on Android         |
+| `npm run ios`       | Start on iOS             |
+| `npm run web`       | Start on web             |
+| `npm run lint`      | Lint                     |
 | `npm run typecheck` | TypeScript type checking |
 
 ## Structure
