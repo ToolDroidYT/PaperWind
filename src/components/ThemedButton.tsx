@@ -1,5 +1,5 @@
-import { cn } from '@lib/cn';
-import { useTheme } from '@lib/useTheme';
+import { cn } from '@/lib/cn';
+import { useTheme } from '@/lib/useTheme';
 import { Pressable, Text } from 'react-native';
 
 interface ThemedButtonProps {

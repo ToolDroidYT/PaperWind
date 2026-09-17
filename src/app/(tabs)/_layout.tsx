@@ -1,4 +1,4 @@
-import { useTheme } from '@lib/useTheme';
+import { useTheme } from '@/lib/useTheme';
 import { Tabs } from 'expo-router';
 import { Home, Settings } from 'lucide-react-native';
 

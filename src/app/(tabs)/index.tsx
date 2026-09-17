@@ -1,6 +1,6 @@
-import { ThemedButton } from '@components/ThemedButton';
-import { ThemedCard } from '@components/ThemedCard';
-import { useTheme } from '@lib/useTheme';
+import { ThemedButton } from '@/components/ThemedButton';
+import { ThemedCard } from '@/components/ThemedCard';
+import { useTheme } from '@/lib/useTheme';
 import { Sparkles, Wind } from 'lucide-react-native';
 import { Text, View } from 'react-native';
 

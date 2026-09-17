@@ -1,6 +1,6 @@
-import { ThemedCard } from '@components/ThemedCard';
-import { isMonetAvailable } from '@lib/monet';
-import { useTheme } from '@lib/useTheme';
+import { ThemedCard } from '@/components/ThemedCard';
+import { isMonetAvailable } from '@/lib/monet';
+import { useTheme } from '@/lib/useTheme';
 import { Check, Info, Palette, Phone } from 'lucide-react-native';
 import { Platform, Pressable, ScrollView, Text, View } from 'react-native';
 

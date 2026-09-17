@@ -1,5 +1,5 @@
-import '../global.css';
-import { useTheme } from '@lib/useTheme';
+import '../../global.css';
+import { useTheme } from '@/lib/useTheme';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
