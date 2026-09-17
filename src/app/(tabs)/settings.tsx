@@ -1,9 +1,8 @@
-import { Card } from '@/components/Card';
-import { Switch } from '@/components/Switch';
 import { isMonetAvailable } from '@/lib/monet';
 import { useTheme } from '@/lib/useTheme';
 import { Check, Info, Palette, Phone } from 'lucide-react-native';
 import { Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { Card, Switch } from 'react-native-paper';
 
 const THEMES = ['light', 'dark', 'system'] as const;
 
@@ -17,16 +16,6 @@ export default function SettingsScreen() {
             style={{ flex: 1, backgroundColor: colors.background }}
             contentContainerStyle={{ padding: 24 }}
             showsVerticalScrollIndicator={false}>
-            <Text
-                style={{
-                    fontSize: 24,
-                    fontWeight: 'bold',
-                    marginBottom: 24,
-                    color: colors.onBackground,
-                }}>
-                Settings
-            </Text>
-
             {/* Appearance Section */}
             <View
                 style={{
@@ -108,74 +97,76 @@ export default function SettingsScreen() {
             </View>
 
             <Card>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        opacity: monetSupported ? 1 : 0.5,
-                    }}>
-                    <View style={{ flex: 1 }}>
-                        <Text
-                            style={{
-                                fontSize: 16,
-                                fontWeight: '500',
-                                color: colors.onSurface,
-                            }}>
-                            Dynamic Colors
-                        </Text>
-                        <Text
-                            style={{
-                                fontSize: 13,
-                                marginTop: 4,
-                                color: colors.onSurfaceVariant,
-                            }}>
-                            {monetSupported ?
-                                'Use wallpaper-derived colors (Android 12+)'
-                            :   'Seed-based palette (Android Monet unavailable)'
-                            }
-                        </Text>
-                    </View>
-
-                    <Switch
-                        checked={useMonet}
-                        onValueChange={monetSupported ? toggleMonet : () => {}}
-                        disabled={!monetSupported}
-                    />
-                </View>
-
-                {/* Color Preview Swatches */}
-                <View style={{ flexDirection: 'row', marginTop: 16, gap: 8 }}>
-                    {[
-                        { label: 'Primary', color: colors.primary },
-                        { label: 'Secondary', color: colors.secondary },
-                        { label: 'Tertiary', color: colors.tertiary },
-                        { label: 'Surface', color: colors.surfaceContainer },
-                    ].map(({ label, color: c }) => (
-                        <View
-                            key={label}
-                            style={{ flex: 1, alignItems: 'center' }}>
-                            <View
-                                style={{
-                                    width: '100%',
-                                    height: 32,
-                                    borderRadius: 8,
-                                    backgroundColor: c,
-                                    borderWidth: 1,
-                                    borderColor: colors.outlineVariant,
-                                }}
-                            />
+                <Card.Content>
+                    <View
+                        style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            opacity: monetSupported ? 1 : 0.5,
+                        }}>
+                        <View style={{ flex: 1 }}>
                             <Text
                                 style={{
-                                    fontSize: 10,
+                                    fontSize: 16,
+                                    fontWeight: '500',
+                                    color: colors.onSurface,
+                                }}>
+                                Dynamic Colors
+                            </Text>
+                            <Text
+                                style={{
+                                    fontSize: 13,
                                     marginTop: 4,
                                     color: colors.onSurfaceVariant,
                                 }}>
-                                {label}
+                                {monetSupported ?
+                                    'Use wallpaper-derived colors (Android 12+)'
+                                :   'Seed-based palette (Android Monet unavailable)'
+                                }
                             </Text>
                         </View>
-                    ))}
-                </View>
+
+                        <Switch
+                            value={useMonet}
+                            onValueChange={monetSupported ? toggleMonet : () => {}}
+                            disabled={!monetSupported}
+                        />
+                    </View>
+
+                    {/* Color Preview Swatches */}
+                    <View style={{ flexDirection: 'row', marginTop: 16, gap: 8 }}>
+                        {[
+                            { label: 'Primary', color: colors.primary },
+                            { label: 'Secondary', color: colors.secondary },
+                            { label: 'Tertiary', color: colors.tertiary },
+                            { label: 'Surface', color: colors.surfaceContainer },
+                        ].map(({ label, color: c }) => (
+                            <View
+                                key={label}
+                                style={{ flex: 1, alignItems: 'center' }}>
+                                <View
+                                    style={{
+                                        width: '100%',
+                                        height: 32,
+                                        borderRadius: 8,
+                                        backgroundColor: c,
+                                        borderWidth: 1,
+                                        borderColor: colors.outlineVariant,
+                                    }}
+                                />
+                                <Text
+                                    style={{
+                                        fontSize: 10,
+                                        marginTop: 4,
+                                        color: colors.onSurfaceVariant,
+                                    }}>
+                                    {label}
+                                </Text>
+                            </View>
+                        ))}
+                    </View>
+                </Card.Content>
             </Card>
 
             {/* About Section */}
@@ -201,17 +192,19 @@ export default function SettingsScreen() {
             </View>
 
             <Card>
-                <Text style={{ fontSize: 16, color: colors.onSurface }}>
-                    MaterialWind v1.0.0
-                </Text>
-                <Text
-                    style={{
-                        fontSize: 13,
-                        marginTop: 4,
-                        color: colors.onSurfaceVariant,
-                    }}>
-                    React Native + NativeWind + Expo Go
-                </Text>
+                <Card.Content>
+                    <Text style={{ fontSize: 16, color: colors.onSurface }}>
+                        MaterialWind v1.0.0
+                    </Text>
+                    <Text
+                        style={{
+                            fontSize: 13,
+                            marginTop: 4,
+                            color: colors.onSurfaceVariant,
+                        }}>
+                        React Native + NativeWind + Expo Go
+                    </Text>
+                </Card.Content>
             </Card>
         </ScrollView>
     );
