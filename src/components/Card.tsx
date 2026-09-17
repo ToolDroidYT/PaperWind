@@ -2,16 +2,16 @@ import { cn } from '@/lib/cn';
 import { useTheme } from '@/lib/useTheme';
 import { View, type ViewProps } from 'react-native';
 
-interface ThemedCardProps extends ViewProps {
+interface CardProps extends ViewProps {
     children: React.ReactNode;
 }
 
-export function ThemedCard({
+export function Card({
     children,
     className,
     style,
     ...props
-}: ThemedCardProps) {
+}: CardProps) {
     const { colors } = useTheme();
 
     return (

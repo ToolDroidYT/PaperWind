@@ -1,5 +1,5 @@
+import { Card } from '@/components/Card';
 import { Switch } from '@/components/Switch';
-import { ThemedCard } from '@/components/ThemedCard';
 import { isMonetAvailable } from '@/lib/monet';
 import { useTheme } from '@/lib/useTheme';
 import { Check, Info, Palette, Phone } from 'lucide-react-native';
@@ -107,7 +107,7 @@ export default function SettingsScreen() {
                 </Text>
             </View>
 
-            <ThemedCard>
+            <Card>
                 <View
                     style={{
                         flexDirection: 'row',
@@ -176,7 +176,7 @@ export default function SettingsScreen() {
                         </View>
                     ))}
                 </View>
-            </ThemedCard>
+            </Card>
 
             {/* About Section */}
             <View
@@ -200,7 +200,7 @@ export default function SettingsScreen() {
                 </Text>
             </View>
 
-            <ThemedCard>
+            <Card>
                 <Text style={{ fontSize: 16, color: colors.onSurface }}>
                     MaterialWind v1.0.0
                 </Text>
@@ -212,7 +212,7 @@ export default function SettingsScreen() {
                     }}>
                     React Native + NativeWind + Expo Go
                 </Text>
-            </ThemedCard>
+            </Card>
         </ScrollView>
     );
 }

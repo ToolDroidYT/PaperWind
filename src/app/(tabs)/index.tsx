@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button';
+import { Card } from '@/components/Card';
 import { Switch } from '@/components/Switch';
-import { ThemedCard } from '@/components/ThemedCard';
 import { useTheme } from '@/lib/useTheme';
 import { Sparkles, Wind } from 'lucide-react-native';
 import { useState } from 'react';
@@ -46,7 +46,7 @@ export default function HomeScreen() {
                 React Native + NativeWind + Expo
             </Text>
 
-            <ThemedCard style={{ marginTop: 32, width: '100%', maxWidth: 380 }}>
+            <Card style={{ marginTop: 32, width: '100%', maxWidth: 380 }}>
                 <View
                     style={{
                         flexDirection: 'row',
@@ -73,10 +73,10 @@ export default function HomeScreen() {
                     }}>
                     Edit app/(tabs)/index.tsx to get started
                 </Text>
-            </ThemedCard>
+            </Card>
 
             {/* Buttons */}
-            <ThemedCard style={{ marginTop: 24, width: '100%', maxWidth: 380 }}>
+            <Card style={{ marginTop: 24, width: '100%', maxWidth: 380 }}>
                 <Text
                     style={{
                         fontSize: 14,
@@ -104,10 +104,10 @@ export default function HomeScreen() {
                         onPress={() => {}}
                     />
                 </View>
-            </ThemedCard>
+            </Card>
 
             {/* Switch */}
-            <ThemedCard style={{ marginTop: 16, width: '100%', maxWidth: 380 }}>
+            <Card style={{ marginTop: 16, width: '100%', maxWidth: 380 }}>
                 <Text
                     style={{
                         fontSize: 14,
@@ -122,7 +122,7 @@ export default function HomeScreen() {
                     onValueChange={setNotifications}
                     label='Notifications'
                 />
-            </ThemedCard>
+            </Card>
         </View>
     );
 }
