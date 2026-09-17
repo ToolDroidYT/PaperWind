@@ -7,8 +7,7 @@ import { useTheme } from '@/lib/useTheme';
 const THEMES = ['light', 'dark', 'system'] as const;
 
 export default function SettingsScreen() {
-    const { isDark, mode, setTheme, colors, useMonet, toggleMonet } =
-        useTheme();
+    const { mode, setTheme, colors, useMonet, toggleMonet } = useTheme();
     const monetSupported = Platform.OS === 'android' && isMonetAvailable();
 
     return (
