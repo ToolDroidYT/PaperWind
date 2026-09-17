@@ -1,4 +1,4 @@
-# MaterialWind
+# PaperWind
 
 A comprehensive React Native + NativeWind + Expo Go project template with Material 3 theming and Android 12+ Monet (Material You) dynamic color support.
 
@@ -33,7 +33,7 @@ npm start
 ## Project Structure
 
 ```
-MaterialWind/
+PaperWind/
 ├── app/
 │   ├── (tabs)/
 │   │   ├── _layout.tsx        # Tab navigator (uses colors)

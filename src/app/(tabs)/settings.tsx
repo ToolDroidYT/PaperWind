@@ -194,7 +194,7 @@ export default function SettingsScreen() {
             <Card>
                 <Card.Content>
                     <Text style={{ fontSize: 16, color: colors.onSurface }}>
-                        MaterialWind v1.0.0
+                        PaperWind v1.0.0
                     </Text>
                     <Text
                         style={{

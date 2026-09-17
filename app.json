@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "MaterialWind",
-    "slug": "materialwind",
+    "name": "PaperWind",
+    "slug": "paperwind",
     "version": "1.0.0",
-    "scheme": "materialwind",
+    "scheme": "paperwind",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "automatic",

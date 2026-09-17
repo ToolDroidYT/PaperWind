@@ -34,7 +34,7 @@ export default function HomeScreen() {
                         fontWeight: 'bold',
                         color: colors.onBackground,
                     }}>
-                    MaterialWind
+                    PaperWind
                 </Text>
             </View>
 
